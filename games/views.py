@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
 def register(request):
@@ -11,6 +11,8 @@ def register(request):
         else:
             user = User.objects.create_user(username=nickname, password=password)
             print(f"Успех! Игрок {user.username} записан в Postgres (ID: {user.id})")
+
+        return redirect('main')
 
     return render(request, 'index.html')
 
