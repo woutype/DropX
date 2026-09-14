@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Dela+Gothic+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0813;
+    color: #ffffff;
+    font-family: "Balsamiq Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 84px;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 90px;
+    letter-spacing: 3px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    text-shadow: 0 0 21px #FFFFFF40;
+    font-family: "Dela Gothic One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logo-text span {
+    color: #a855f7;
+    text-shadow: 0 0 21px #A855F75E;
+}
+
+p {
+    color: #6D6D6D;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    height: 180px;
+    margin: -35px;
+    transform: translateY(-14px);
+    filter: drop-shadow(0 0 21px #A855F740);
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-input {
+    font-family: "Balsamiq Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #ffffff;
+    width: 240px;
+    height: 40px;
+    text-align: center;
+    background: #00000000;
+    border: 1px solid #5B2F85;
+    border-radius: 20px;
+    margin: 4px;
+    transition: all 0.4s ease;
+}
+
+.custom-input:focus {
+    outline: none;
+    border: 2px solid #a855f7;
+    filter: drop-shadow(0 0 20px #A855F740);
+}
+
+.pass-hidden {
+    opacity: 0;
+    height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: transparent;
+    pointer-events: none;
+}
+
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icon, p, .auth-container {
+    animation: FadeIn 1s ease-in both;
+}
+
+p {
+    animation-delay: 0.2s;
+}
+
+.auth-container {
+    animation-delay: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.continue-btn {
+    font-family: "Balsamiq Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 100px;
+    height: 40px;
+    background: none;
+    color: #8383837D;
+    font-size: 22px;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+    margin-top: 5px;
+}
+
+.continue-btn:hover {
+    filter: drop-shadow(0 0 20px #783FAF5C);
+    transform: translateY(-2px);
+    color: white;
+    scale: 105%;
+    background: #9D35FF;
+    width: 230px;
+}
