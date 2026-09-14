@@ -148,3 +148,7 @@ p {
     background: #9D35FF;
     width: 230px;
 }
+
+.continue-btn:active {
+    transform: scale(0.97);
+}
