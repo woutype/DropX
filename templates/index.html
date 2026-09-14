@@ -16,13 +16,14 @@
     </div>
     <p>Чай, печенье, сладкий Twix — всё, что есть, неси в DropX!</p>
 
-    <div class="auth-container">
-        <input type="text" id="nick" class="custom-input" placeholder="Введите имя" aria-label="Nickname">
-        <input type="password" id="pass" class="custom-input pass-hidden" placeholder="Введите пароль" aria-label="Password">
-        <button type="button" id="submit" class="continue-btn pass-hidden" aria-label="Continue">
+    <form method="POST" class="auth-container">
+        {% csrf_token %}
+        <input type="text" id="nick" name="nickname" class="custom-input" placeholder="Введите имя" aria-label="Nickname" required>
+        <input type="password" id="pass" name="password" class="custom-input pass-hidden" placeholder="Введите пароль" aria-label="Password" required>
+        <button type="submit" id="submit" class="continue-btn pass-hidden" aria-label="Continue">
             <span>Продолжить</span>
         </button>
-    </div>
+    </form>
 
 
     <script src="{% static 'js/main.js' %}"></script>
