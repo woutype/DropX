@@ -4,7 +4,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -42,4 +41,17 @@ p {
     color: #6D6D6D;
     font-size: 22px;
     margin-bottom: 30px;
+}
+
+.logo-icon {
+    height: 180px;
+    margin: -35px;
+    transform: translateY(-14px);
+
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
