@@ -18,14 +18,19 @@
 
     <form method="POST" class="auth-container">
         {% csrf_token %}
+
+        {% if error %}
+            <p style="color: #ff5c5c; font-size: 16px; margin-bottom: 8px; text-align: center;">
+            {{ error }}
+            </p>
+        {% endif %}
+
         <input type="text" id="nick" name="nickname" class="custom-input" placeholder="Введите имя" aria-label="Nickname" required>
         <input type="password" id="pass" name="password" class="custom-input pass-hidden" placeholder="Введите пароль" aria-label="Password" required>
         <button type="submit" id="submit" class="continue-btn pass-hidden" aria-label="Continue">
             <span>Продолжить</span>
         </button>
     </form>
-
-
     <script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>
