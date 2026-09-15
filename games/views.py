@@ -23,9 +23,14 @@ def register(request):
 
     return render(request, 'index.html', {'error': error})
 
-
 def profile(request):
     return render(request, 'pages/profile.html')
 
 def upgrade(request):
     return render(request, "pages/upgrade.html")
+
+def stairs(request):
+    return render(request, 'pages/stairs.html')
+
+def battery(request):
+    return render(request, 'pages/battery.html')

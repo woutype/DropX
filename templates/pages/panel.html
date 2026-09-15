@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/panel.css' %}?v=2">
+    <title>DropX-Profile</title>
+</head>
+<body>
+    <div class="right-block">
+        <a href="{% url 'profile' %}"><img src="{% static 'icons/logo.svg' %}" id="logo-icon" alt="logo"></a>
+        <a href="{% url 'upgrade' %}"><img src="{% static 'icons/upgrade.svg' %}" id="upgrade" alt="upgrade"></a>
+        <a href="{% url 'stairs' %}"><img src="{% static 'icons/stairs.svg' %}" id="stairs" alt="stairs"></a>
+        <a href="{% url 'battery' %}"><img src="{% static 'icons/battery.svg' %}" id="battery" alt="battery"></a>
+
+        <a href="{% url 'registration' %}" id="logout-border"><img src="{% static 'icons/logout.svg' %}" id="logout" alt="logout"></a>
+    </div>
+    <div>
+        {% block main %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>
