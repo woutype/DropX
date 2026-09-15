@@ -26,3 +26,6 @@ def register(request):
 
 def profile(request):
     return render(request, 'pages/profile.html')
+
+def upgrade(request):
+    return render(request, "pages/upgrade.html")
