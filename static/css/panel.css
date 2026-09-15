@@ -13,75 +13,51 @@ body {
     font-family: "Balsamiq Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100vh;
     display: flex;
     flex-direction: row;
 }
 
-.right-block {
+.panel {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
     background: none;
     border-right: 2px solid #a855f7;
+    width: 80px;
+    height: 100vh;
+    opacity: 0.6;
+    transition: all 0.2s ease;
 }
 
-#upgrade {
+.panel:hover {
+    opacity: 1;
+    box-shadow: 0 0 20px #A855F77A;
+}
+
+#block-icon {
     width: 80px;
     height: 80px;
     transition: all ease-out 0.2s;
 }
 
-#upgrade:hover {
-    border-right: 10px solid #a855f7;
-}
+#block-icon:hover {
 
-#logo-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: -20px;
-    transition: all ease-out 0.2s;
-}
-
-#logo-icon:hover {
-    border-right: 10px solid #a855f7;
 }
 
 #logout {
-    margin-top: -10px;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     transition: all ease-out 0.2s;
-    scale: 0.75;
+    margin-bottom: 10px;
+    border: 3px solid transparent;
+    border-radius: 50%;
 }
 
 #logout:hover {
     transform: rotate(270deg);
     border-radius: 50%;
     border: 3px solid white;
-}
-
-#stairs {
-    width: 80px;
-    height: 80px;
-    transition: all ease-out 0.2s;
-}
-
-#stairs:hover {
-    border-right: 10px solid #a855f7;
-}
-
-#battery img {
-    width: 70%;
-}
-
-#battery {
-    width: 80px;
-    height: 80px;
-    transition: all ease-out 0.2s;
-}
-
-#battery:hover {
-    border-right: 10px solid #a855f7;
 }

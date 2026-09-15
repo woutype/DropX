@@ -6,17 +6,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/panel.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/panel.css' %}?v=4">
     <title>DropX-Profile</title>
 </head>
 <body>
-    <div class="right-block">
-        <a href="{% url 'profile' %}"><img src="{% static 'icons/logo.svg' %}" id="logo-icon" alt="logo"></a>
-        <a href="{% url 'upgrade' %}"><img src="{% static 'icons/upgrade.svg' %}" id="upgrade" alt="upgrade"></a>
-        <a href="{% url 'stairs' %}"><img src="{% static 'icons/stairs.svg' %}" id="stairs" alt="stairs"></a>
-        <a href="{% url 'battery' %}"><img src="{% static 'icons/battery.svg' %}" id="battery" alt="battery"></a>
-
-        <a href="{% url 'registration' %}" id="logout-border"><img src="{% static 'icons/logout.svg' %}" id="logout" alt="logout"></a>
+    <div class="panel">
+            <a href="{% url 'profile' %}" id="block-icon"><img src="{% static 'icons/logo.svg' %}" alt="logo"></a>
+        <div id="games">
+            <a href="{% url 'upgrade' %}" id="block-upgrade"><img src="{% static 'icons/upgrade.svg' %}"  alt="logo"></a>
+            <a href="{% url 'stairs' %}" id="block-stairs"><img src="{% static 'icons/logout.svg' %}" alt="logo"></a>
+            <a href="{% url 'battery' %}" id="block-battery"><img src="{% static 'icons/battery.svg' %}" alt="logo"></a>
+        </div>
+        <div>
+            <a href="{% url 'registration' %}"><img src="{% static 'icons/logout.svg' %}" id="logout" alt="logout"></a>
+        </div>
     </div>
     <div>
         {% block main %}
