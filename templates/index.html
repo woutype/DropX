@@ -6,28 +6,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}?v=1.1">
     <title>DropX-Registration</title>
 </head>
 <body>
-    <div class="icon">
-        <h1 class="logo-text">Drop</h1>
-        <img src="{% static 'icons/logo.svg' %}" alt="X" class="logo-icon">
+    <div class="full-icon">
+        <h1 id="text">Drop</h1>
+        <img id="x" src="{% static 'icons/logo.svg' %}" alt="X">
     </div>
     <p>Чай, печенье, сладкий Twix — всё, что есть, неси в DropX!</p>
 
-    <form method="POST" class="auth-container">
-        {% csrf_token %}
-
-        {% if error %}
-            <p style="color: #ff5c5c; font-size: 16px; margin-bottom: 8px; text-align: center;">
-            {{ error }}
-            </p>
-        {% endif %}
-
-        <input type="text" id="nick" name="nickname" class="custom-input" placeholder="Введите имя" aria-label="Nickname" required>
-        <input type="password" id="pass" name="password" class="custom-input pass-hidden" placeholder="Введите пароль" aria-label="Password" required>
-        <button type="submit" id="submit" class="continue-btn pass-hidden" aria-label="Continue">
+    <form method="POST">
+        <input type="text" id="nickname" name="nickname" placeholder="Введите имя" aria-label="Nickname" required>
+        <input type="password" id="password" name="password" placeholder="Введите пароль" aria-label="Password" required>
+        <button type="submit" id="submit" aria-label="Continue">
             <span>Продолжить</span>
         </button>
     </form>

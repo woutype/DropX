@@ -29,8 +29,8 @@ def profile(request):
 def upgrade(request):
     return render(request, "pages/upgrade.html")
 
-def stairs(request):
-    return render(request, 'pages/stairs.html')
+def plus(request):
+    return render(request, 'pages/plus.html')
 
 def battery(request):
     return render(request, 'pages/battery.html')

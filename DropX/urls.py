@@ -16,13 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from games.views import register, profile, upgrade, stairs, battery
+from games.views import register, profile, upgrade, plus, battery
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', register, name='registration'),
     path('profile/', profile, name='profile'),
     path('upgrade/', upgrade, name='upgrade'),
-    path('stairs/', stairs, name='stairs'),
+    path('plus/', plus, name='plus'),
     path('battery', battery, name='battery'),
 ]
