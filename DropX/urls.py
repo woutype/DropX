@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from games.views import register, profile, upgrade, plus, battery
+from games.views import register, profile, upgrade, plus, battery, out
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,5 @@ urlpatterns = [
     path('upgrade/', upgrade, name='upgrade'),
     path('plus/', plus, name='plus'),
     path('battery', battery, name='battery'),
+    path('out/', out, name='out'),
 ]

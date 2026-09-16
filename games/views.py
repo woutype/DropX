@@ -1,13 +1,17 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+
 
 def register(request):
-    error = None
-
     if request.method == 'POST':
         nickname = request.POST.get('nickname', '').strip()
-        password = request.POST.get('password', '')
+        password = request.POST.get('password', '').strip()
+
+        if not nickname or not password:
+            return render(request, 'index.html', {
+                'error': 'Пожалуйста, заполните все поля'
+            })
 
         if User.objects.filter(username=nickname).exists():
             user = authenticate(request, username=nickname, password=password)
@@ -15,13 +19,13 @@ def register(request):
                 login(request, user)
                 return redirect('profile')
             else:
-                error = "Неверный пароль!"
+                return render(request, 'index.html', {'error': 'Неверный пароль, попробуй еще раз'})
         else:
             user = User.objects.create_user(username=nickname, password=password)
             login(request, user)
             return redirect('profile')
 
-    return render(request, 'index.html', {'error': error})
+    return render(request, 'index.html')
 
 def profile(request):
     return render(request, 'pages/profile.html')
@@ -34,3 +38,7 @@ def plus(request):
 
 def battery(request):
     return render(request, 'pages/battery.html')
+
+def out(request):
+    logout(request)
+    return redirect('registration')

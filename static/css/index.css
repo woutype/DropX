@@ -29,6 +29,7 @@ body {
     flex-direction: row;
     transform: translateX(49px);
     margin-bottom: -30px;
+    animation: FadeIn ease-in-out 0.5s backwards;
 }
 
 #text {
@@ -55,6 +56,8 @@ p {
     color: #6D6D6D;
     font-size: 22px;
     margin-bottom: 30px;
+    animation: FadeIn ease-in-out 0.5s backwards;
+    animation-delay: 0.2s;
 }
 
 #form {
@@ -62,7 +65,9 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
+    animation: FadeIn ease-in-out 0.5s backwards;
+    animation-delay: 0.4s;
 }
 
 #form input {
@@ -94,7 +99,6 @@ p {
     color: #8383837D;
     font-size: 22px;
     border-radius: 20px;
-    transition: all 0.2s ease;
     margin-top: 5px;
     border: 1px solid #FFFFFF24;
 }
@@ -107,6 +111,7 @@ p {
     color: #ffffff;
     width: 240px;
     transform: translateY(-5px);
+    transition: all 0.2s ease;
 }
 
 #submit:active {
@@ -117,11 +122,40 @@ p {
     transform: scale(0.97);
 }
 
+.hide-element {
+    overflow: hidden;
+    scale: 0.8;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    transform: translateY(-20px);
+}
+
+#password, #submit {
+    transition: scale 0.5s ease, opacity 0.5s ease, height 0.5s ease, width 0.5s ease, transform 0.5s ease;
+}
+
 @keyframes FadeIn {
     from {
-
+        scale: 0.8;
+        opacity: 0;
     }
     to {
-
+        opacity: 1;
+        scale: 1;
     }
+}
+
+.error {
+    color: #FF0000;
+    background: transparent;
+    font-size: 18px;
+    border: 2px solid #FF0000;
+    border-radius: 50px;
+    width: 350px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(10px);
 }
