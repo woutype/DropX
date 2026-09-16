@@ -30,6 +30,10 @@ body {
     height: 100vh;
 }
 
+.panel:hover {
+    box-shadow: 0 0 20px #A855F75C;
+}
+
 #block-icon {
     width: 80px;
     height: 80px;
@@ -119,8 +123,9 @@ a:not(.do-not-animate):hover  {
     border-bottom: solid 2px #a855f7;
     width: 100vw;
     height: 60px;
-    border-radius: 30px;
-    gap: 20px
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    gap: 20px;
 }
 
 #username-block {
@@ -135,13 +140,34 @@ a:not(.do-not-animate):hover  {
 #username {
     font-size: 20px;
     color: #ffffff;
+    margin-right: 15px;
 }
 
-#block-balance span {
+#info-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transform: translateY(2px);
+    width: 100px;
+    height: 60px;
+    border-right: 2px solid #a855f7;
+    border-radius: 50px;
+}
+
+#info-block span {
     font-size: 20px;
 }
 
-#block-balance img {
-    width: 28px;
+#info-block img {
+    width: 30px;
+    height: 30px;
+    transform: translateY(-2px);
+    margin: -6px;
+}
+
+#block-balance:hover {
+    box-shadow: 0 0 20px #A855F75C;
 }
 
