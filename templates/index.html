@@ -6,23 +6,24 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}?v=1.1">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}?v=2">
     <title>DropX-Registration</title>
 </head>
 <body>
-    <div class="full-icon">
+    <div id="full-icon">
         <h1 id="text">Drop</h1>
         <img id="x" src="{% static 'icons/logo.svg' %}" alt="X">
     </div>
     <p>Чай, печенье, сладкий Twix — всё, что есть, неси в DropX!</p>
 
-    <form method="POST">
+    <form method="POST" id="form">
         <input type="text" id="nickname" name="nickname" placeholder="Введите имя" aria-label="Nickname" required>
         <input type="password" id="password" name="password" placeholder="Введите пароль" aria-label="Password" required>
         <button type="submit" id="submit" aria-label="Continue">
             <span>Продолжить</span>
         </button>
     </form>
+
     <script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>

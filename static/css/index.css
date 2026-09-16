@@ -13,20 +13,36 @@ body {
     font-family: "Balsamiq Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
-    width: 100vh;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform: translateY(-50px);
 }
 
-.logo-text {
+#full-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    transform: translateX(49px);
+    margin-bottom: -30px;
+}
+
+#text {
     color: #ffffff;
     font-size: 90px;
     font-family: "Dela Gothic One", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+#x {
+    margin-left: -50px;
+    scale: 0.75;
+    transform: translateY(-15px) translateX(-30px);
 }
 
 .logo-text span {
@@ -35,30 +51,21 @@ body {
 }
 
 p {
+    margin-top: -10px;
     color: #6D6D6D;
     font-size: 22px;
     margin-bottom: 30px;
 }
 
-.logo-icon {
-    height: 180px;
-    margin: -35px;
-    transform: translateY(-14px);
-    filter: drop-shadow(0 0 21px #A855F740);
-}
-
-.icon {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.auth-container {
+#form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.custom-input {
+#form input {
     font-family: "Balsamiq Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -74,79 +81,47 @@ p {
     transition: all 0.4s ease;
 }
 
-.custom-input:focus {
-    outline: none;
-    border: 2px solid #a855f7;
-    filter: drop-shadow(0 0 20px #A855F740);
-}
-
-.pass-hidden {
-    opacity: 0;
-    height: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-color: transparent;
-    pointer-events: none;
-}
-
-@keyframes FadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.icon {
-    animation: FadeIn 0.5s ease-out both;
-}
-
-p {
-    animation: FadeIn 0.8s ease-out both;
-    animation-delay: 0.3s;
-}
-
-.auth-container {
-    animation: FadeIn 0.8s ease-out both;
-    animation-delay: 0.6s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.continue-btn {
+#submit {
     font-family: "Balsamiq Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
-    width: 100px;
+    width: 150px;
     height: 40px;
     background: none;
     color: #8383837D;
     font-size: 22px;
     border-radius: 20px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
     margin-top: 5px;
+    border: 1px solid #FFFFFF24;
 }
 
-.continue-btn:hover {
-    filter: drop-shadow(0 0 20px #783FAF5C);
-    transform: translateY(-2px);
-    color: white;
-    scale: 105%;
-    background: #9D35FF;
-    width: 230px;
+#submit:hover {
+    background: #a050eb;
+    background: linear-gradient(180deg,
+        rgba(160, 80, 235, 1) 0%,
+        rgba(134, 38, 224, 1) 100%);
+    color: #ffffff;
+    width: 240px;
+    transform: translateY(-5px);
+}
+
+#submit:active {
+    scale: 0.9;
 }
 
 .continue-btn:active {
     transform: scale(0.97);
+}
+
+@keyframes FadeIn {
+    from {
+
+    }
+    to {
+
+    }
 }
