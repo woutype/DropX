@@ -1,6 +1,9 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.db import transaction
 from django.shortcuts import render, redirect
+
+from games.models import Profile
 
 
 def register(request):
@@ -21,7 +24,10 @@ def register(request):
             else:
                 return render(request, 'index.html', {'error': 'Неверный пароль, попробуй еще раз'})
         else:
-            user = User.objects.create_user(username=nickname, password=password)
+            with transaction.atomic():
+                user = User.objects.create_user(username=nickname, password=password)
+                Profile.objects.create(user=user)
+
             login(request, user)
             return redirect('profile')
 
