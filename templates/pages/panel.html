@@ -7,37 +7,54 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/panel.css' %}?v=2">
+
+    {% block style %}
+        <!-- Дополнительные стили -->
+    {% endblock %}
+
     <title>DropX-Profile</title>
 </head>
 <body>
 
+    <!-- Панель навигации -->
     <div class="panel">
-            <a href="{% url 'profile' %}" id="block-icon"><img src="{% static 'icons/logo.svg' %}" alt="logo"></a>
+        <a href="{% url 'profile' %}" id="block-icon">
+            <img src="{% static 'icons/logo.svg' %}" alt="logo">
+        </a>
         <div id="games">
-            <a href="{% url 'upgrade' %}" id="block-upgrade"><img src="{% static 'icons/upgrade.svg' %}"  alt="logo"></a>
-            <a href="{% url 'plus' %}" id="block-plus"><img src="{% static 'icons/plus.svg' %}" alt="plus"></a>
-            <a href="{% url 'battery' %}" id="block-battery"><img src="{% static 'icons/battery.svg' %}" alt="battery"></a>
+            <a href="{% url 'upgrade' %}" id="block-upgrade">
+                <img src="{% static 'icons/upgrade.svg' %}" alt="upgrade">
+            </a>
+            <a href="{% url 'plus' %}" id="block-plus">
+                <img src="{% static 'icons/plus.svg' %}" alt="plus">
+            </a>
+            <a href="{% url 'battery' %}" id="block-battery">
+                <img src="{% static 'icons/battery.svg' %}" alt="battery">
+            </a>
         </div>
-        <form method="POST">
-            {% csrf_token %}
-            <a href="{% url 'out' %}" class="do-not-animate"><img src="{% static 'icons/logout.svg' %}" id="logout" alt="logout"></a>
-        </form>
+        <a href="{% url 'out' %}" class="do-not-animate">
+            <img src="{% static 'icons/logout.svg' %}" id="logout" alt="logout">
+        </a>
     </div>
 
-    <div id="block-balance">
-        <div id="info-block">
-            <span>{{ request.user.profile.balance|default:0}}</span>
-            <img src="{% static 'icons/dollar.svg' %}" alt="dollar">
+    <!-- Правая рабочая область (баланс)-->
+    <div class="content">
+        <div id="block-balance">
+            <div id="info-block">
+                <span>{{ request.user.profile.balance|default:0 }}</span>
+                <img src="{% static 'icons/dollar.svg' %}" alt="dollar">
+            </div>
+            <div id="username-block">
+                <span id="username">{{ request.user.username }}</span>
+            </div>
         </div>
-        <div id="username-block">
-            <span id="username">{{ request.user.username }}</span>
+
+        <!-- Основная часть страницы -->
+        <div class="page-body">
+            {% block main %}
+            {% endblock %}
         </div>
     </div>
 
-    <div>
-        {% block main %}
-
-        {% endblock %}
-    </div>
 </body>
 </html>

@@ -1,6 +1,22 @@
 {% extends 'pages/panel.html' %}
 {% load static %}
 
-{% block content %}
-    
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/plus.css' %}?=v1">
+{% endblock %}
+
+{% block main %}
+<div id="main-block">
+    <h2 id="main-title">Способы пополнения баланса</h2>
+
+    <div id="second-block">
+        <div id="bonus">
+            <!-- Сюда пойдет таймер и кнопка забрать 5$ -->
+        </div>
+
+        <div id="clicker">
+            <!-- Сюда пойдет кликабельная монета -->
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -121,7 +121,7 @@ a:not(.do-not-animate):hover  {
     align-items: center;
     justify-content: end;
     border-bottom: solid 2px #a855f7;
-    width: 100vw;
+    width: 100%;
     height: 60px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -170,4 +170,17 @@ a:not(.do-not-animate):hover  {
 
 #block-balance:hover {
     box-shadow: 0 0 20px #A855F75C;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.page-body {
+    padding: 30px;
+    flex: 1;
 }
