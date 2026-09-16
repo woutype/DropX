@@ -110,3 +110,38 @@ body {
 a:not(.do-not-animate):hover  {
     border-left: 4px solid #a855f7;
 }
+
+#block-balance {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    border-bottom: solid 2px #a855f7;
+    width: 100vw;
+    height: 60px;
+    border-radius: 30px;
+    gap: 20px
+}
+
+#username-block {
+    width: auto;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#username {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#block-balance span {
+    font-size: 20px;
+}
+
+#block-balance img {
+    width: 28px;
+}
+

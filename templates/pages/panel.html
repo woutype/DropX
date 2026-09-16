@@ -10,6 +10,7 @@
     <title>DropX-Profile</title>
 </head>
 <body>
+
     <div class="panel">
             <a href="{% url 'profile' %}" id="block-icon"><img src="{% static 'icons/logo.svg' %}" alt="logo"></a>
         <div id="games">
@@ -22,6 +23,17 @@
             <a href="{% url 'out' %}" class="do-not-animate"><img src="{% static 'icons/logout.svg' %}" id="logout" alt="logout"></a>
         </form>
     </div>
+
+    <div id="block-balance">
+        <div id="info-block">
+            <span>1000</span>
+            <img src="{% static 'icons/dollar.svg' %}" alt="dollar">
+        </div>
+        <div id="username-block">
+            <span id="username">{{ request.user.username }}</span>
+        </div>
+    </div>
+
     <div>
         {% block main %}
 
