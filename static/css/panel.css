@@ -17,6 +17,7 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: row;
+    overflow-x: hidden;
 }
 
 .panel {
@@ -28,10 +29,11 @@ body {
     border-right: 2px solid #a855f7;
     width: 80px;
     height: 100vh;
+    animation: FadeInPanel 1s ease-in-out backwards;
 }
 
 .panel:hover {
-    box-shadow: 0 0 20px #A855F75C;
+    box-shadow: 0 0 20px #A855F73D;
 }
 
 #block-icon {
@@ -119,57 +121,59 @@ a:not(.do-not-animate):hover  {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: end;
-    border-bottom: solid 2px #a855f7;
-    width: 100%;
-    height: 60px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    justify-content: center;
+    align-self: flex-end;
+    width: auto;
+    height: 66px;
     gap: 20px;
+    border-top: 3px solid #a855f7;
+    border-left: 3px solid #a855f7;
+    border-bottom: 3px solid #a855f7;
+    border-bottom-left-radius: 33px;
+    border-top-left-radius: 33px;
+    margin-top: 15px;
+    padding-left: 15px;
+    animation: FadeInBalance 1s ease-in-out backwards   ;
 }
 
 #username-block {
-    width: auto;
-    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
+    width: auto;
+    padding: 14px;
+    height: 46px;
+    background: #a050eb;
+    background: linear-gradient(180deg, rgba(160, 80, 235, 1) 0%, rgba(134, 38, 224, 1) 100%);
+    border: 2px solid #a855f7;
+    border-radius: 23px;
+    transform: translateX(-7px);
 }
 
 #username {
-    font-size: 20px;
-    color: #ffffff;
-    margin-right: 15px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #info-block {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-    margin-right: 10px;
-    transform: translateY(1px);
-    width: 500px;
-    height: 60px;
-    border-right: 2px solid #a855f7;
-    border-radius: 50px;
+    transform: translateX(-16px) translateY(-1px);
 }
 
 #info-block span {
     font-size: 20px;
+    transform: translateY(-1px);
 }
 
 #info-block img {
-    width: 30px;
-    height: 30px;
-    transform: translateY(-2px);
-    margin-left: -6px;
-    margin-right: 10px;
-}
-
-#block-balance:hover {
-    box-shadow: 0 0 20px #A855F75C;
+    width: 20px;
+    height: 20px;
+    background: #a050eb;
+    background: linear-gradient(180deg, rgba(160, 80, 235, 1) 0%, rgba(134, 38, 224, 1) 100%);
+    border: 2px solid #a855f7;
+    border-radius: 18px;
+    transform: translateY(3px);
 }
 
 .content {
@@ -177,10 +181,27 @@ a:not(.do-not-animate):hover  {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow-y: auto;
 }
 
 .page-body {
-    padding: 30px;
     flex: 1;
+    overflow-y: auto;
+}
+
+@keyframes FadeInBalance {
+    from {
+        transform: translateX(260px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes FadeInPanel {
+    from {
+        transform: translateX(-90px);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
